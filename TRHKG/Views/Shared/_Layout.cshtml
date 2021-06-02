@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="data:;base64,=">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/Style.css" />
+    <link rel="stylesheet" href="~/dist/css/lightbox.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../img/icon/1.ico" />
+</head>
+
+<body>
+
+
+    <div class="Page">
+
+
+        @await Html.PartialAsync("_HeaderPartial")
+        <div id="popup" class="popup pz">
+            <a href="#header" class="popup__area">
+
+            </a>
+            <div class="popup__body">
+                <div class="popup__content">
+                    <a href="##" class="popup__close">X</a>
+                    <div class="popup__title">Эльбрус</div>
+                    <div class="popup__pic">
+
+                    </div>
+                    <div class="popup__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="popup1" class="popup pz">
+            <a href="#header" class="popup__area">
+
+            </a>
+            <div class="popup__body">
+                <div class="popup__content">
+                    <a href="##" class="popup__close">X</a>
+                    <div class="popup__title">Карелия</div>
+                    <div class="popup__pic1">
+
+                    </div>
+                    <div class="popup__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="popup2" class="popup pz">
+            <a href="#header" class="popup__area">
+
+            </a>
+            <div class="popup__body">
+                <div class="popup__content">
+                    <a href="##" class="popup__close">X</a>
+                    <div class="popup__title">Камчатка</div>
+                    <div class="popup__pic2">
+
+                    </div>
+                    <div class="popup__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            @RenderBody()
+        </div>
+        @await Html.PartialAsync("_FooterPartial")
+    </div>
+    <script src="~/dist/js/lightbox-plus-jquery.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

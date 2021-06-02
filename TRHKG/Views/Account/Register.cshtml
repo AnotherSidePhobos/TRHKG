@@ -1,0 +1,46 @@
+﻿@model TRHKG.Models.ViewModels.RegisterViewModel
+
+<div class="RegSection">
+
+    <div class="container">
+        <h1 title="Register form">Register</h1>
+        <form method="post" asp-action="Register" asp-controller="Account">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="group">
+                <label asp-for="Name">Name</label>
+                <input asp-for="Name" type="text">
+                <span asp-validation-for="Name" class="text-danger"></span>
+
+            </div>
+            <div class="group">
+                <label asp-for="Email">Email</label>
+                <input asp-for="Email" type="email">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="group">
+                <label asp-for="Password">Password</label>
+                <input asp-for="Password" type="password">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="group">
+                <label asp-for="ConfirmPassword">Confirm Password</label>
+                <input asp-for="ConfirmPassword" type="password">
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div>
+                <input type="submit" value="Регистрация" class="btn" />
+            </div>
+
+            @*<p>
+                <a asp-action="Login">Sign In</a>
+            </p>*@
+        </form>
+    </div>
+
+
+    @section Scripts{
+        <partial name="_ValidationScriptsPartial" />
+
+    }
+</div>
