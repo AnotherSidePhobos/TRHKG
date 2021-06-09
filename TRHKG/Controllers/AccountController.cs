@@ -84,12 +84,59 @@ namespace TRHKG.Models
             return View(model);
         }
 
+
+        public IActionResult IncrementCount()
+        {
+            int countUsers = _db.Users.Count();
+
+
+            return ViewBag.CUsers = ++countUsers;
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> LogOff()
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ContactUs(ContactUsViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+
+
+                var contact = new Contact
+                {
+                    FirstName = model.FirstName,
+                    SecondName = model.SecondName,
+                    Country = model.Country,
+                    Subject = model.Subject
+                };
+
+                if (contact != null)
+                {
+                    _db.Contacts.Add(contact);
+                    _db.SaveChanges();
+                }
+               
+                return RedirectToAction("Index", "Home");
+
+            }
+            return View(model);
+        }
+
+
+
+
+
+
+
+
 
     }
 }

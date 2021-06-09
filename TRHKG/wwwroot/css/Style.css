@@ -11,13 +11,16 @@ h1, h2, h3, h4, h5, h5, .header {
 
 
 #topNubex {
+    background-image: url(/img/Icons/Up.png);
+    min-height: 50px;
+    min-width: 50px;
     position: fixed;
     right: 45px;
     bottom: 45px;
     font-size: 24px;
     color: #697531;
     cursor: pointer;
-    max-height: 30px;
+    max-height: 50px;
 }
 
 
@@ -147,6 +150,7 @@ header {
     max-width: 1200px;
     text-align: justify;
     font-size: 18px;
+    padding: 0px 15px;
 }
 
 .section__title {
@@ -210,14 +214,49 @@ header {
     width: 100%;
     max-width: 1760px;
     margin: 0 auto; 
-    min-height: 100vh;
+    min-height: 120vh;
+    /*min-height: 100%;*/
 }
 .pictList {
     font-weight: bold;
     letter-spacing: 1px;
 }
 
+.loginForm{
+    position: relative;
+}
+.loginForm a{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
 
+/*RegSection*/
+.aSingIn {
+    text-align: center;
+    margin-top: 90px;
+}
+.aSingUp {
+    text-align: center;
+    margin-top: 100px;
+}
+.RegSec {
+    padding-top: 70px;
+}
+
+.container__inner{
+    position: absolute;
+    width: 800px;
+    height: auto;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+/*RegSection*/
+.container__inner {
+    max-width: 60%;
+}
 .box1 {
     border-radius: 4px;
     box-shadow: 16px 17px 28px 0 rgba(16, 16, 16, 0.7);
@@ -385,12 +424,7 @@ header {
 
 
 
-/*RegSection*/
-.RegSection {
-    padding-top: 70px;
-}
 
-/*RegSection*/
 
 .Page{
     overflow: hidden;
@@ -428,8 +462,14 @@ form {
 .group {
     padding: 5px;
 }
-
+.group label {
+    /*padding-left: 350px;*/
+}
+.group input {
+    right: 10px;
+}
 label {
+    /*padding-left: 350px;*/
     text-transform: uppercase;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -441,6 +481,7 @@ select {
 
 input {
     position: absolute;
+
 }
 
     input:hover {
@@ -472,9 +513,6 @@ checkbox {
 /*login*/
 
 
-
-
-
 /*contactUsa*/
 
 .ContactUSa {
@@ -483,7 +521,9 @@ checkbox {
 }
 
 .contactUs__inner {
-    min-height: 560px;
+/*    min-height: 560px;*/
+    min-height: 60vh;
+
     position: relative;
     border-top: 12px solid #bbe0ef;
     border-left: 12px solid #205694;
@@ -504,7 +544,7 @@ checkbox {
 }
 
 .contact__map {
-    margin: 15px 30px 65px 155px;
+    margin: 15px 30px 65px 55px;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -513,7 +553,7 @@ checkbox {
 }
 
 .contact__field {
-    margin: 15px 230px 65px 15px;
+    margin: 15px 130px 65px 15px;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -580,3 +620,253 @@ checkbox {
         background-color: #f2f2f2;
     }
 /*contactUsa*/
+
+.CommonContainer{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#ContactUSa{
+    margin-top: auto;
+}
+
+
+
+/*LIST*/
+
+
+.ItemSection {
+    margin-top: 20px;
+    width: auto;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    position: absolute;
+    left: 10px;
+    font-weight: 900;
+    font-size: large;
+    font-family: cursive;
+    color: #205694;
+}
+
+.ItemSection__header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+}
+
+.ItemSection__header .logo {
+    position: absolute;
+    right: 100px;
+}
+
+.ItemSection__header input {
+    position: absolute;
+    right: 200px;
+}
+
+.ItemSection__header label {
+    position: absolute;
+    right: 400px;
+}
+    .ItemSection__header .crtItem {
+        position: absolute;
+        right: 0px;
+    }
+.tableCrt {
+    background-color: #dceff5;
+    border: 4px double #205694;
+    padding: 20px;
+}
+.ItemSection__table__head {
+    font-weight: 500;
+    font-size: large;
+    font-family: cursive;
+    padding-bottom: 30px;
+}
+.ItemSection__table__head .item {
+    padding-right: 260px;
+}
+.ItemSection__table__head .cost {
+    padding-right: 240px;
+}
+.ItemSection__table__head .isthere {
+    padding-right: 220px;
+}
+
+.ItemSection__table__body {
+    font-weight: 500;
+    font-size: large;
+    font-family: cursive;
+    padding-bottom: 30px;
+}
+.ItemSection__table__body .item {
+    padding-right: 270px;
+}
+
+    .ItemSection__table__body .cost {
+        padding-right: 270px;
+    }
+
+    .ItemSection__table__body .isthere {
+        padding-right: 270px;
+    }
+.ItemSection__table__body .isfood {
+    padding-right: 150px;
+}
+.ItemSection__table__body .upd {
+    margin-right: 50px;
+}
+.upd {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding: 2px 10px;
+    background-color: #697531;
+    text-align: center;
+}
+.upd:hover {
+    background-color: #205694;
+}
+.dlt {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding: 2px 10px;
+    background-color: #697531;
+    text-align: center;
+}
+
+.dlt:hover {
+    background-color: #205694;
+}
+
+.crtItem {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding: 2px 10px;
+    background-color: #697531;
+    text-align: center;
+}
+
+.crtItem:hover {
+    background-color: #205694;
+}
+.Back {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding: 2px 16px;
+    background-color: #697531;
+    text-align: center;
+    cursor: pointer;
+}
+.Back:hover {
+    background-color: #205694;
+}
+.create {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding: 2px 16px;
+    background-color: #697531;
+    text-align: center;
+    cursor: pointer;
+}
+
+.create:hover {
+    background-color: #205694;
+}
+
+
+
+
+.ItemSection__table__body__crt {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: large;
+    font-family: cursive;
+    padding-bottom: 30px;
+}
+
+.ItemSection__table__body__crt .item{
+    position: absolute;
+    width: 150px;
+    margin-right: 50px;
+}
+.ItemSection__table__body__crt .cost{
+    position: absolute;
+    margin-left: 304px;
+}
+
+.ItemSection__table__body__crt .isthere {
+    position: absolute;
+    margin-left: 630px;
+}
+.ItemSection__table__body__crt .isfood {
+    position: absolute;
+    margin-left: 940px;
+}
+.ItemSection__table__body__crt .create {
+    position: absolute;
+    margin-left: 1040px;
+}
+.ItemSection__table__body__crt .Back {
+    position: absolute;
+    margin-left: 1140px;
+}
+
+
+
+
+
+
+/*///table*/
+
+
+table {
+    border-spacing: 133.2px 25px;
+    background-color: #dceff5;
+    border-top: 4px double #205694;
+    border-left: 4px double #205694;
+    border-right: 4px double #205694;
+    empty-cells: hide;
+}
+thead {
+    font-weight: 900;
+    font-size: large;
+    font-family: cursive;
+    color: #205694;
+}
+
+
+
+
+
+
+
+
+/*.ItemSection__table__body__crt .costc{
+    width: 150px;
+    margin-right: 100px;
+}*/
+/*LIST*/

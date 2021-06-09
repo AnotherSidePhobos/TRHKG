@@ -218,6 +218,30 @@ namespace TRHKG.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("TRHKG.Models.Contact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Contacts");
+                });
+
             modelBuilder.Entity("TRHKG.Models.Item", b =>
                 {
                     b.Property<int>("Id")

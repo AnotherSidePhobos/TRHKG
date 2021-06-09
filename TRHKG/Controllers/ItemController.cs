@@ -126,7 +126,7 @@ namespace TRHKG.Controllers
 
             _db.Items.Remove(obj);
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("List", "Item");
 
         }
 

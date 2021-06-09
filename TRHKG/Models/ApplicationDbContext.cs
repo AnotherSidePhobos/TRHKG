@@ -11,5 +11,6 @@ namespace TRHKG.Models
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<Item> Items { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }

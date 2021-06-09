@@ -429,12 +429,10 @@ C:\Users\amelent\source\repos\TRHKG\TRHKG\obj\Debug\net5.0\Razor\Views\_ViewStar
 C:\Users\amelent\source\repos\TRHKG\TRHKG\obj\Debug\net5.0\Razor\Views\Shared\_HeaderPartial.cshtml.g.cs
 C:\Users\amelent\source\repos\TRHKG\TRHKG\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\amelent\source\repos\TRHKG\TRHKG\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
-C:\Users\amelent\source\repos\TRHKG\TRHKG\obj\Debug\net5.0\Razor\Views\Shared\_AboutPartial.cshtml.g.cs
 C:\Users\amelent\source\repos\TRHKG\TRHKG\obj\Debug\net5.0\Razor\Views\Shared\_FooterPartial.cshtml.g.cs
 C:\Users\amelent\source\repos\TRHKG\TRHKG\obj\Debug\net5.0\Razor\Views\Item\Create.cshtml.g.cs
 C:\Users\amelent\source\repos\TRHKG\TRHKG\obj\Debug\net5.0\Razor\Views\Item\List.cshtml.g.cs
 C:\Users\amelent\source\repos\TRHKG\TRHKG\obj\Debug\net5.0\Razor\Views\Item\Update.cshtml.g.cs
-C:\Users\amelent\source\repos\TRHKG\TRHKG\obj\Debug\net5.0\Razor\Views\Shared\_PicturesPartial.cshtml.g.cs
 C:\Users\amelent\source\repos\TRHKG\TRHKG\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\amelent\source\repos\TRHKG\TRHKG\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\amelent\source\repos\TRHKG\TRHKG\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs

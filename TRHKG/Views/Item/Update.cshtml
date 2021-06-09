@@ -1,70 +1,135 @@
 ﻿@model TRHKG.Models.Item
-<div class="ItemSection">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <div class="container">
-        <form method="post" asp-action="Update">
-            <input asp-for="Id" hidden />
-            <div class="border p-3">
-
-                <div class="form-group row">
-                    <h2 class="text-black-50 pl-3">Update Expense</h2>
+        <div class="ItemSection">
+            <form method="post" asp-action="Update">
+                <div class="ItemSection__header">
+                    <span class="logo">Item List</span>
+                    <label>Search: </label>
+                    <input type="text" id="filter input">
+                    <a class="crtItem" asp-controller="Item" asp-action="Create">Create new Item</a>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-group row">
-                            <div class="col-3">
-                                <label asp-for="Name"></label>
-                            </div>
-                            <div class="col-3">
-                                <label asp-for="Cost"></label>
-                            </div>
-                            <div class="col-3">
-                                <label asp-for="IsItThere"></label>
-                            </div>
-                            <div class="col-3">
-                                <label asp-for="IsItFood"></label>
-                            </div>
+                <div class="tableCrt">
+                    <div class="ItemSection__table__head">
+                        <label asp-for="Name" class="item">Item</label>
+                        <label asp-for="Cost" class="cost">Cost</label>
+                        <label asp-for="IsItThere" class="isthere">IsItThere</label>
+                        <label asp-for="IsItFood" class="isfood">IsItFood</label>
+                    </div>
+                    <div class="ItemSection__table__body__crt">
+                        <div class="item">
+                            <input asp-for="Name" type="text" />
                         </div>
-                        <div class="form-group row">
-                            <div class="col-3">
-                                <input asp-for="Name" class="form-control" />
-                                <span asp-validation-for="Name" class="text-danger"></span>
-                            </div>
-                            <div class="col-3">
-                                <input asp-for="Cost" class="form-control" />
-                                <span asp-validation-for="Cost" class="text-danger"></span>
-                            </div>
-                            <div class="col-3">
-                                <input type="checkbox" asp-for="IsItThere" class="form-control" />
-                                <span asp-validation-for="IsItThere" class="text-danger"></span>
-                            </div>
-                            <div class="col-3">
-                                <input type="checkbox" asp-for="IsItFood" class="form-control" />
-                                <span asp-validation-for="IsItFood" class="text-danger"></span>
-                            </div>
+                        <div class="cost">
+                            <input asp-for="Cost" type="text" />
+                        </div>
+                        <div class="isthere">
+                            <input asp-for="IsItThere" type="checkbox" />
+                        </div>
 
+                        <div class="isfood">
+                            <input asp-for="IsItFood" type="checkbox" />
+                        </div>
+                        <input class="create" type="submit" value="Update" />
 
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-8 offset-2 row">
-                                <div class="col">
-                                    <input type="submit" class="btn btn-info w-75" value="Update" />
-                                </div>
-                                <div class="col">
-                                    <a asp-action="Index" class="btn btn-danger w-75">Back</a>
-                                </div>
-                            </div>
-                        </div>
+                        <a class="Back" asp-action="List">Back</a>
 
                     </div>
                 </div>
-            </div>
-        </form>
-    </div>
-</div>
+            </form>
+        </div>
 
-        @section Scripts{
-            @{
-                <partial name="_ValidationScriptsPartial" />
-            }
-        }
+    </div>
+</body>
+</html>
+
+
+
+@*<div class="ItemSection">
+        <div class="container">
+            <form method="post" asp-action="Update">
+                <input asp-for="Id" hidden />
+                <div class="border p-3">
+
+                    <div class="form-group row">
+                        <h2 class="text-black-50 pl-3">Update Expense</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group row">
+                                <div class="col-3">
+                                    <label asp-for="Name"></label>
+                                </div>
+                                <div class="col-3">
+                                    <label asp-for="Cost"></label>
+                                </div>
+                                <div class="col-3">
+                                    <label asp-for="IsItThere"></label>
+                                </div>
+                                <div class="col-3">
+                                    <label asp-for="IsItFood"></label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-3">
+                                    <input asp-for="Name" class="form-control" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                                <div class="col-3">
+                                    <input asp-for="Cost" class="form-control" />
+                                    <span asp-validation-for="Cost" class="text-danger"></span>
+                                </div>
+                                <div class="col-3">
+                                    <input type="checkbox" asp-for="IsItThere" class="form-control" />
+                                    <span asp-validation-for="IsItThere" class="text-danger"></span>
+                                </div>
+                                <div class="col-3">
+                                    <input type="checkbox" asp-for="IsItFood" class="form-control" />
+                                    <span asp-validation-for="IsItFood" class="text-danger"></span>
+                                </div>
+
+
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-8 offset-2 row">
+                                    <div class="col">
+                                        <input type="submit" class="btn btn-info w-75" value="Update" />
+                                    </div>
+                                    <div class="col">
+                                        <a asp-action="Index" class="btn btn-danger w-75">Back</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>*@
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
 

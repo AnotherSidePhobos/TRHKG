@@ -1,68 +1,143 @@
 ﻿@model IEnumerable<TRHKG.Models.Item>
-<div class="ItemSection">
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <div class="container">
-        <div class="row pt-4">
-            <div class="col-6">
-                <h2 class="text-primary">Item List</h2>
-            </div>
-
-            <div class="col-2 text-right">
+        <div class="ItemSection">
+            <div class="ItemSection__header">
+                <span class="logo">Item List</span>
                 <label>Search: </label>
+                <input type="text" id="filter input">
+                <a class="crtItem" asp-controller="Item" asp-action="Create">Create new Item</a>
             </div>
-            <div class="col-2 text-right">
-                <input type="text" id="filter_input" />
-            </div>
-            <div class="col-2 text-right fdfs">
-                <a asp-controller="Item" asp-action="Create" class="btn btn-primary">Create new Item</a>
-            </div>
-        </div>
-        <br />
 
-        @if (Model.Count() > 0)
-        {
-            <table class="table table-bordered table-striped" style="width:100%">
+            <table>
                 <thead>
                     <tr>
-                        <th>
-                            Item
-                        </th>
-                        <th>
-                            Cost
-                        </th>
-                        <th>
-                            IsItThere
-                        </th>
-                        <th>
-                            IsItFood
-                        </th>
+                        <td>Item</td>
+                        <td>Cost</td>
+                        <td>IsItThere</td>
+                        <td>IsItFood</td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </thead>
-                <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tbody>
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Cost</td>
+                            <td>@item.IsItThere</td>
+                            <td>@item.IsItFood</td>
+                            <td><a class="upd" asp-controller="Item" asp-action="Update" asp-route-Id="@item.Id">Update</a></td>
+                            <td><a class="dlt" asp-controller="Item" asp-action="Delete" asp-route-Id="@item.Id">Delete</a></td>
+                        </tr>
+                    </tbody>
+                }
+
+
+            </table>
+            @*<div class="table">
+                <div class="ItemSection__table__head">
+                    <label class="item">Item</label>
+                    <label class="cost">Cost</label>
+                    <label class="isthere">IsItThere</label>
+                    <label class="isfood">IsItFood</label>
+                </div>
+                <div class="ItemSection__table__body">
                     @foreach (var item in Model)
                     {
-
-                        <tr class="filter_List">
-                            <td width="25%">@item.Name</td>
-                            <td width="25%">@item.Cost</td>
-                            <td width="25%">@item.IsItThere</td>
-                            <td width="25%">@item.IsItFood</td>
-                            <td width="25%">
-                                <div class="w-100 btn-group" role="group">
-                                    <a asp-controller="Item" asp-action="Update" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Update</a>
-                                    <a asp-controller="Item" asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger mx-1">Delete</a>
-                                </div>
-                            </td>
-                        </tr>
+                        <label class="item">@item.Name</label>
+                        <label class="cost">@item.Cost</label>
+                        <label class="isthere">@item.IsItThere</label>
+                        <label class="isfood">@item.IsItFood</label>
+                        <a class="upd" asp-controller="Item" asp-action="Update" asp-route-Id="@item.Id">Update</a>
+                        <a class="dlt" asp-controller="Item" asp-action="Delete" asp-route-Id="@item.Id">Delete</a>
                     }
-
-                </tbody>
-            </table>
-        }
-        else
-        {
-            <p>No items created yet</p>
-        }
+                </div>
+            </div>*@
+        </div>
 
     </div>
-</div>
+</body>
+</html>
+
+
+@*<div class="ItemSection">
+        <div class="container">
+            <div class="row pt-4">
+                <div class="col-6">
+                    <h2 class="text-primary">Item List</h2>
+                </div>
+
+                <div class="col-2 text-right">
+                    <label>Search: </label>
+                </div>
+                <div class="col-2 text-right">
+                    <input type="text" id="filter_input" />
+                </div>
+                <div class="col-2 text-right fdfs">
+                    <a asp-controller="Item" asp-action="Create" class="btn btn-primary">Create new Item</a>
+                </div>
+            </div>
+            <br />
+
+            @if (Model.Count() > 0)
+            {
+                <table class="table table-bordered table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                Item
+                            </th>
+                            <th>
+                                Cost
+                            </th>
+                            <th>
+                                IsItThere
+                            </th>
+                            <th>
+                                IsItFood
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr class="filter_List">
+                                <td width="25%">@item.Name</td>
+                                <td width="25%">@item.Cost</td>
+                                <td width="25%">@item.IsItThere</td>
+                                <td width="25%">@item.IsItFood</td>
+                                <td width="25%">
+                                    <div class="w-100 btn-group" role="group">
+                                        <a asp-controller="Item" asp-action="Update" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Update</a>
+                                        <a asp-controller="Item" asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger mx-1">Delete</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No items created yet</p>
+            }
+
+        </div>
+    </div>*@
 
